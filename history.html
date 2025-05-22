@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <title>Punktu Vēsture</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Punktu Vēsture</h1>
+  </header>
+  <nav>
+    <a href="index.html">Atpakaļ</a>
+  </nav>
+  <div class="container">
+    <ul id="historyList"></ul>
+  </div>
+  <footer>
+    <p>&copy; 2025 Punktu Skaitītājs</p>
+  </footer>
+  <script>
+    const historyList = document.getElementById("historyList");
+    const scoreHistory = JSON.parse(localStorage.getItem("scoreHistory")) || [];
+
+    scoreHistory.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      historyList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
